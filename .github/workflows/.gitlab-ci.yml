@@ -49,3 +49,6 @@ jobs:
              - name: check current directory contents
                run: | 
                  ls -l
+             - name: print current working directory
+               run: |
+                python main.py

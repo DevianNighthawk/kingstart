@@ -1,0 +1,27 @@
+name: Python package
+on: 
+    push: 
+        branches:
+            -master
+    jobs:
+        build:
+            runs-on: ubuntu-16.04
+            steps:
+            - uses: actions/checkout@v2
+            - name: Setup Python 3.7
+            - uses: actions/setup-python@v2
+                  with:
+                      python-version: 3.7
+            - name: Install dependencies
+              run: |
+                  sudo apt update
+                  sudo apt upgrade
+                  sudo add-apt-repository ppa:deadsnakes/ppa
+                  sudo apt update
+                  sudo apt-get install python3.7-dev
+                  sudo apt-get install libsm6 libxext6 libxrender1 libxrender-dev -y --fix-missing
+                  python -m pip install --upgrade pip
+                  pip install pipenv
+                  pipenv lock --requirements > requirments.txt
+                  pip install -r requirements.txt
+                  pip install setuptools=44.0.0

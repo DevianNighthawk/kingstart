@@ -14,8 +14,7 @@ jobs:
                with:
                   python-version: '3.7' # Version range or exact version of a Python version to use, using SemVer's version range syntax
              - name: Install dependencies
-               run: | 
-	           sudo apt update
+               run: sudo apt update
                     
 
 			    

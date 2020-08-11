@@ -20,7 +20,7 @@ jobs:
                  sudo add-apt-repository ppa:deadsnakes/ppa
                  sudo apt update
                  sudo apt-get install python3.7-dev
-                 sudo apt-get install libsm6 libext6 libxrender1 libxrender-dev -y --fix-missing
+                 sudo apt-get install libsm6 libxext6 libxrender1 libxrender-dev -y --fix-missing
                  python -m pip install --upgrade-pip
                  pip install pipenv
                  pipenv lock --requirements > requirements.txt

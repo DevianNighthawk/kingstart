@@ -3,7 +3,7 @@ on:
     push: 
         branches:
             -master
-    jobs:
+jobs:
         build:
             runs-on: ubuntu-16.04
             steps:

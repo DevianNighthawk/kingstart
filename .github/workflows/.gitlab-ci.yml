@@ -81,7 +81,7 @@ jobs:
                  ls -l
              - name: cd into test directory
                run: |
-                 cd test
+                 cd tests
              - name: Check current directory to see if in tests
                run: |
                  pwd

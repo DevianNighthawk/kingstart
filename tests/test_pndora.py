@@ -17,8 +17,9 @@ class TestPndora(unittest.TestCase):
 	#import pytest
 	def test_filename_is_str(self):
 		#import pndora
-		
 		self.assertRaises(TypeError,pndora.read_data,0)
+	def test_file_existence(self):
+		self.assertRaises(FileNotFoundError,pndora.read_data,"t.csv")
 
 
 

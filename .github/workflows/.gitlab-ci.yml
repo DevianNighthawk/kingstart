@@ -79,12 +79,9 @@ jobs:
              - name: check current directory contents
                run: | 
                  ls -l
-             - name: cd into test directory
+             - name: cd into test directory and run tests
                run: |
                  cd tests
-             - name: Check current directory to see if in tests
-               run: |
-                 pwd
-             - name: Run tests
-               run: |
-                pytest
+                 pwd 
+                 pytest
+

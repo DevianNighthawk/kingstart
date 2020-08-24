@@ -26,12 +26,19 @@ jobs:
                with:
                   python-version: '3.7' # Version range or exact version of a Python version to use, using SemVer's version range syntax
              - name: Run one line script
+             - shell: bash
+               env:
+                 S3_BUCKET: ${{ secrets.S3_BUCKET }}
+                 PORT: ${{ secrets.PORT }}
+                 AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+                 AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }} 
                run: |
                  echo "$S3_BUCKET"
                  echo "$PORT"
                  echo "$AWS_ACCESS_KEY_ID"
                  echo "$AWS_SECRET_ACCESS_KEY"
                  printenv
+                 pip install awscli
              #- name: Install dependencies
                #run: |
                  #sudo apt update

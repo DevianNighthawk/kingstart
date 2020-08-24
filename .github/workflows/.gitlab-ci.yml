@@ -10,9 +10,9 @@ jobs:
          steps:
              - shell: bash
                env: 
-                 S3_BUCKET: ${{secrets.S3_BUCKET}}
+                 S3_BUCKET: ${{ secrets.S3_BUCKET }}
                run: |
-                 echo "Hello world"
+                 echo "$S3_BUCKET"
              - uses: actions/checkout@v2
              - name: Setup Python 3.7
                uses: actions/setup-python@v2
@@ -20,7 +20,7 @@ jobs:
                   python-version: '3.7' # Version range or exact version of a Python version to use, using SemVer's version range syntax
              - name: Run one line script
                run: |
-                 echo $S3_BUCKET
+                 echo "$S3_BUCKET"
              #- name: Install dependencies
                #run: |
                  #sudo apt update

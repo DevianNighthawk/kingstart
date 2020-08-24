@@ -15,7 +15,7 @@ jobs:
                   python-version: '3.7' # Version range or exact version of a Python version to use, using SemVer's version range syntax
              - name: Check if we can access bucket name
                run: |
-                 echo ${{ secrets.S3_BUCKET}}
+                 echo $S3_BUCKET
              #- name: Install dependencies
                #run: |
                  #sudo apt update

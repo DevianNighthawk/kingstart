@@ -38,6 +38,9 @@ jobs:
                  echo "$AWS_SECRET_ACCESS_KEY"
                  printenv
                  pip install awscli
+                 aws configure set region ca-central-1
+                 touch foo.txt
+                 aws s3 cp foo.txt s3://$S3_BUCKET/foo.txt
              #- name: Install dependencies
                #run: |
                  #sudo apt update
